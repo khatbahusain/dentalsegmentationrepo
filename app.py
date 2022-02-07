@@ -18,6 +18,8 @@ from tensorflow import keras
 import tensorflow as tf
 import base64
 import cv2
+import os
+os.system('apt-get update ; apt-get install ffmpeg libsm6 libxext6  -y')
 
 import json
 
