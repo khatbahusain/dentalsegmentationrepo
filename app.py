@@ -59,7 +59,7 @@ def profile():
         payload = json.dumps({"base64str": x_image,})
 
         try:
-            response = requests.put("https://dentalsegmentationwebapp.azurewebsites.net/predict", data = payload)
+            response = requests.put("https://dentalsegmentationapicontainer.azurewebsites.net/predict", data = payload)
 
             y_image = response.json()
 
