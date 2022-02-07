@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="login-form bg-light mt-4 p-4">
+
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="notification is-danger">
+                            {{ messages[0] }}<br> Aller à <a href="{{ url_for('auth.login') }}">la page de connexion</a>.
+                        </div>
+                    {% endif %}
+                {% endwith %}
+
+                <form method="POST" action="/signup" class="row g-3">
+                    <h4>S'inscrir</h4>
+                    <div class="col-12">
+                        <label>Email</label>
+                        <input type="text" name="email" class="form-control" placeholder="Email" autofocus="">
+                    </div>
+
+
+                    <div class="col-12">
+                        <label>Nom</label>
+                        <input class="form-control" type="text" name="name" placeholder="Nom" autofocus="">
+                    </div>
+
+
+                    <div class="col-12">
+                        <label>Mot de passe</label>
+                        <input type="password" name="password" class="form-control" placeholder="Mot de passe">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-dark float-end">S'inscrire</button>
+                    </div>
+                </form>
+                <hr class="mt-4">
+                <div class="col-12">
+                    <p class="text-center mb-0"  style="font-size:13px;">Vous avez un compte ? <a href="{{ url_for('auth.login') }}">Se connecter</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

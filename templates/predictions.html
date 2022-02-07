@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h3>Mes prédictions : {{dr_email}}</h3>
+
+<!-- Create table -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <!--<th scope="col">Date</th>-->
+      <th scope="col">Radiographie</th>
+      <th scope="col">Segmentation</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for prediction in predictions %}
+    <tr>
+      <th scope="row">{{prediction.id}}</th>
+      <!--<td>{{prediction.date}}</td>-->
+      <td><img src="{{prediction.base64_x}}" width="60%" height="30%"></td>
+      <td><img src="{{prediction.base64_y}}" width="60%" height="30%"></td>
+      <td>{{prediction.state}}</td>
+      <td>
+        <a href="#" class="btn btn-danger">Supprimer</a>
+      </td>
+    </tr>
+  </tbody>
+
+{% endfor %}
+
+<style>
+    
+footer {
+    display: none;
+}
+
+</style>
+
+{% endblock %}

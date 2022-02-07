@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <section class="vh-100" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-9 col-xl-7">
+              <div class="card" style="border-radius: 15px;">
+                <div class="card-body p-5">
+      
+                  <div class="text-center mb-4 pb-2">
+                    <img src="{{url_for('static', filename='dent.png')}}" alt="Bulb" width="100">
+                  </div>
+      
+                  <figure class="text-center mb-0">
+                    <blockquote class="blockquote">
+                      <p class="pb-3">
+                        <h1>Segmentation automatique des dents</h1>
+                        <i class="fas fa-quote-left fa-xs text-primary"></i>
+                        <span class="lead font-italic">Cette Application est capable de segmenter les dents à partir d’une radiographie dentaire ce qui permet de réduire le temps de prévisualisation de dentistes, afin de réduire le temps nécessaire pour établir des diagnostics.</span>
+                      </p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer mb-0">DentaSeg</figcaption><br>
+                    <p>
+                      <a class="btn btn-outline-dark" href="{{ url_for('auth.login') }}">Se connecter</a>
+                      <a class="btn btn-outline-dark" href="{{ url_for('auth.signup') }}">S'inscrire</a>
+                    </p>
+                  </figure>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    
+
+{% endblock %}
+
+
+---------------Folder prject name
+               ├── __init__.py # setup your app
+               ├── main.py   # the non-auth routes for your app
+               ├── auth.py   # the auth routes for your app
+               ├── models.py # your user model
+               ├── db.sqlite # your database
+               └── templates
+                    ├── base.html     # contains common layout and links
+                    ├── index.html    # show the home page
+                    ├── login.html    # show the login form
+                    ├── profile.html  # show the profile page
+                    └── signup.html   # show the signup form
