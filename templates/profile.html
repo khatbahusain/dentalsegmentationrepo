@@ -10,7 +10,7 @@
   <p>Téléchargez une radiographie dentaire puis cliquez sur segmenter les dents <img src="{{url_for('static', filename='dent.png')}}" align="middle" width="25px" height="25px"/></p>
   <p class="lead">
         
-    <form action="http://localhost:5000/profile" method="post" enctype="multipart/form-data" >
+    <form action="https://dentalsegmenter.azurewebsites.net/profile" method="post" enctype="multipart/form-data" >
       <div>
           <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
 
